@@ -1,0 +1,28 @@
+# Bank Marketing (UCI) -> term-deposit subscription, binary classification.
+dataset: bank-marketing
+experiment: bank-marketing-nn
+run_name: null          # null -> MLflow names the run; set it when comparing variants
+seed: 42
+
+# `duration` is the length of the last phone call. It is only known *after* the call,
+# and it is by far the strongest predictor of the outcome — training with it produces a
+# model with ~0.93 AUC that cannot be used before dialling. Dropped by default; remove
+# this line only to reproduce the leaky number deliberately.
+drop_columns: [duration]
+
+model:
+  hidden: [128, 64]
+  dropout: 0.2
+  batchnorm: true
+
+training:
+  epochs: 30
+  batch_size: 512
+  lr: 0.001
+  weight_decay: 0.0001
+  patience: 5
+  pos_weight: auto        # neg/pos ratio; ~7.5 for this dataset
+
+serving:
+  s3_bucket: models
+  model_name: bank-marketing

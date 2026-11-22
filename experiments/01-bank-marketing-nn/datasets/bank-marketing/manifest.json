@@ -1,0 +1,49 @@
+{
+  "dataset": "bank-marketing",
+  "kaggle_ref": "prakharrathi25/banking-dataset-marketing-targets",
+  "pulled_at": "2026-11-22T13:47:39+00:00",
+  "split_origin": "shipped",
+  "target": "y",
+  "task": "binary",
+  "positive_label": "yes",
+  "leaky_columns": [
+    "duration"
+  ],
+  "raw_files": {
+    "train.csv": {
+      "sha256": "d1513ec63b385506f7cfce9f2c5caa9fe99e7ba4e8c3fa264b3aaf0f849ed32d",
+      "bytes": 4610348
+    },
+    "test.csv": {
+      "sha256": "dc8d576e9bda0f41ee891251bd84bab9a39ce576cba715aac08adc2374a01fde",
+      "bytes": 461474
+    }
+  },
+  "rows": {
+    "train": 45211,
+    "test": 4521
+  },
+  "columns": [
+    "age",
+    "job",
+    "marital",
+    "education",
+    "default",
+    "balance",
+    "housing",
+    "loan",
+    "contact",
+    "day",
+    "month",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "poutcome",
+    "y"
+  ],
+  "target_distribution": {
+    "no": 39922,
+    "yes": 5289
+  }
+}

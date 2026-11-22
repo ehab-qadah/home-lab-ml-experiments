@@ -27,10 +27,17 @@ Experiments, notebooks and training specs for the self-hosted ML platform on `sh
 ## Layout
 
 ```
-datasets/    # pull scripts + dataset cards (no bytes)
-experiments/ # notebooks, one directory per experiment
-train/       # TrainJob / InferenceService specs applied to ml-node
+experiments/ # one directory per experiment, each self-contained
 ```
+
+| # | Experiment | What it shows |
+|---|---|---|
+| 01 | [`01-bank-marketing-nn`](experiments/01-bank-marketing-nn) | PyTorch MLP on Kaggle Bank Marketing: pull → train → MLflow → KServe V2 endpoint |
+
+Each experiment owns its own `src/`, `configs/`, `k8s/` and numbered `scripts/`, and its
+README records the decisions and the traps hit while building it. Dataset bytes are pulled
+into that experiment's `datasets/` directory and ignored by git; the manifest records the
+sha256 of every raw file so a run traces back to exact bytes.
 
 ## Not in this repo
 

@@ -30,6 +30,9 @@ access_token
 mlruns/
 mlartifacts/
 
+# Trained bundles — they live in s3://models/<dataset>/<run_id>/
+artifacts/
+
 # OS / editor
 .DS_Store
 *.swp
