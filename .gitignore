@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Dataset bytes — pull them, do not commit them
+data/
+datasets/*/
+!datasets/*.md
+*.zip
+*.tar.gz
+*.parquet
+*.csv
+
+# Secrets
+.env
+.env.*
+*.pem
+kaggle.json
+access_token
+.ght
+
+# Local MLflow state
+mlruns/
+mlartifacts/
+
+# OS / editor
+.DS_Store
+*.swp
